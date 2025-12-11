@@ -21,7 +21,7 @@ export default function FilmInfoPage() {
     return (
         <>
             <Header />
-            <h3>Vedo il film con id ${film.id}</h3>
+            <h3>Vedo il film con id {film.id}</h3>
 
             <div className="col-4">
 

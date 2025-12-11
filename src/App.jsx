@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepgae />} />
-          <Route path='/FilmInfoPage' element={<FilmInfoPage />} />
+          <Route path='/FilmInfoPage/:id' element={<FilmInfoPage />} />
 
 
         </Routes>
