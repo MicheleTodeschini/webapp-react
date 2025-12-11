@@ -23,7 +23,16 @@ export default function FilmInfoPage() {
             <Header />
             <h3>Vedo il film con id {film.id}</h3>
 
-            <div className="col-4">
+            <div key={film.id} className="col-4">
+                <div className="card-top">
+                    <img src={`http://localhost:3000/img/${film.image}`}></img>
+                </div>
+                <div className="card-bottom">
+                    <h3>{film.title}</h3>
+                    <p>{film.abstract}</p>
+                    <p>{film.director}, {film.genre}, {film.release_year}</p>
+                    <Link to={`/FilmInfoPage/${film.id}`}>Click here for seeing more about the film</Link>
+                </div>
 
             </div>
 
