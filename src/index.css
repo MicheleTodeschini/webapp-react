@@ -1,2 +1,17 @@
 @import url('bootstrap');
-@import url('bootstrap-icons')
+@import url('bootstrap-icons');
+
+
+.card {
+  height: 400px;
+  display: flex;
+}
+
+.card-top img {
+  height: 200px;
+}
+
+.card-top {
+    display: flex;
+     justify-content: center;
+}

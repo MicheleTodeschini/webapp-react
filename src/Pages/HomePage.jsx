@@ -2,6 +2,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 
 export default function Homepgae() {
@@ -25,7 +26,7 @@ export default function Homepgae() {
                 <div className="row">
                     {
                         films.map(film => (
-                            <div key={film.id} className="col-4 card">
+                            <div key={film.id} className="col-4 card py-3">
                                 <div className="card-top">
                                     <img src={`http://localhost:3000/img/${film.image}`}></img>
                                 </div>
@@ -33,6 +34,7 @@ export default function Homepgae() {
                                     <h3>{film.title}</h3>
                                     <p>{film.abstract}</p>
                                     <p>{film.director}, {film.genre}, {film.release_year}</p>
+                                    <Link to={`/FilmInfoPage/${film.id}`}>Click here for seeing more about the film</Link>
                                 </div>
                             </div>
                         ))
