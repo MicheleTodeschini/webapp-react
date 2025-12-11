@@ -9,6 +9,7 @@ export default function FilmInfoPage() {
     return (
         <>
             <Header />
+            <h3>Taht's the film info page</h3>
             <Footer />
         </>
     )
