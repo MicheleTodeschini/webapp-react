@@ -10,8 +10,10 @@ export default function FilmInfoPage() {
 
     const { id } = useParams()
     const urlFilm = `http://localhost:3000/api/movies/${id}`
+    const urlReviews = `http://localhost:3000/api/reviews`
 
     const [film, setFilm] = useState([])
+    const [review, setReview] = useState([])
 
     useEffect(() => {
         axios
@@ -19,13 +21,23 @@ export default function FilmInfoPage() {
             .then(res => setFilm(res.data))
     }, [id])
 
+    useEffect(() => {
+        axios.get(urlReviews)
+            .then(res => setReview(res.data))
+    })
+
     return (
         <>
-            <Header />
-            <Link to={'/'}>Return to the HomePage</Link>
 
 
-            <h3>Vedo il film con id {film.id}</h3>
+            <div className="filmpage-top">
+
+                <h3>Vedo il film con id {film.id}</h3>
+                <Link to={'/'}>Return to the HomePage</Link>
+
+            </div>
+
+
 
             <div key={film.id} className="info">
                 <div className="card-left">
@@ -38,6 +50,10 @@ export default function FilmInfoPage() {
 
                 </div>
 
+            </div>
+
+            <div className="review">
+                <p>{review.movie_id}</p>
             </div>
 
 
