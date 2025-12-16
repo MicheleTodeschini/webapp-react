@@ -17,11 +17,11 @@ export default function Homepgae() {
     useEffect(getFilms, [])
 
     function getFilms() {
-
+        setLoading(true);
         axios
             .get(url)
             .then(res => setFilms(res.data))
-
+            .finally(() => setLoading(false))
     }
 
     return (
