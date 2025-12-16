@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepgae from "./Pages/HomePage";
 import FilmInfoPage from "./Pages/FilmInfoPage";
+import { GlobalProvider } from "../context/GlobalContext";
 
 
 function App() {
@@ -8,17 +9,18 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Homepgae />} />
-          <Route path='/FilmInfoPage/:id' element={<FilmInfoPage />} />
+      <GlobalProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Homepgae />} />
+            <Route path='/FilmInfoPage/:id' element={<FilmInfoPage />} />
 
 
-        </Routes>
+          </Routes>
 
-      </BrowserRouter>
+        </BrowserRouter>
 
-
+      </GlobalProvider>
     </>
   )
 }
